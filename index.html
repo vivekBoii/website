@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+
+	<!-- css file -->
+	<link rel="stylesheet" href="./design/index.css">
+	<link rel="stylesheet" href="./design/home.css">
+	<link rel="stylesheet" href="./design/slide.scss">
+
+	<!-- cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+
+	<!-- social media icon -->
+
+	<div class="social__media_icon">
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-facebook.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-instagram.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-linkedin-circled.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-twitter.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-youtube.svg" alt="">
+			</a>
+		</div>
+
+	</div>
+
+	<!-- Header Section  -->
+
+	<Header>
+
+		<div class="header__wrapper">
+
+			<div class="logo__container">
+				<a href="/">
+					<img src="./images/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="content__container">
+				<div class="location__container">
+					<div class="location__logo">
+						<img src="./images/icons8-location-40.png" alt="">
+					</div>
+					<div class="location__content">
+						<small>13, Big Smart Str, 2nd Cross</small>
+						<p>Newyork, USA 1002.</p>
+					</div>
+				</div>
+
+				<div class="mail__container">
+					<div class="mail__logo">
+						<img src="./images/icons8-gmail-login-40.png" alt="">
+					</div>
+					<div class="mail__content">
+						<small>1-800-784-533 & 544</small>
+						<p>Machinery@Support.Com</p>
+					</div>
+				</div>
+
+				<div class="social__container">
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-facebook.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-instagram.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-twitter.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-youtube.svg" alt="">
+						</a>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+	</Header>
+
+	<!-- Navbar section start here -->
+	<nav id="navbar" class="sticky">
+		<div class="menu-icon">
+			<span>
+				<img src="./images/icons8-menu.svg" alt="">
+			</span>
+		</div>
+		<a class="logo" href="./index.html">
+			<div class="logo">
+				CraneCare <span>.</span>
+			</div>
+		</a>
+		<div class="nav-items">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./static/about.html">About</a></li>
+			<li><a href="./static/services.html">Service</a></li>
+			<li><a href="./static/industries.html">Industries</a></li>
+			<li><a href="./static/clients.html">Client</a></li>
+			<li><a href="./static/contact.html">Contact</a></li>
+		</div>
+	</nav>
+
+	<script>
+		const menuBtn = document.querySelector(".menu-icon span");
+		const hanburger = document.querySelectorAll('.menu-icon')[0];
+		const items = document.querySelector(".nav-items");
+		const form = document.querySelector("form");
+		const image = document.querySelector(".menu-icon span img");
+		const header = document.querySelector("Header")
+		const nav = document.querySelector("nav")
+
+		let counter = 0;
+
+		menuBtn.onclick = () => {
+			items.classList.toggle("active");
+			hanburger.classList.toggle("close");
+
+			const attr = document.createAttribute("src");
+
+			counter += 1;
+			if (counter % 2 == 1) {
+				attr.value = "./images/icons8-multiply-40.png"
+				// console.log(h);
+				header.style.display = "none"
+				nav.style.position = 'fixed'
+				nav.style.top = '0%'
+				nav.style.left = '0%'
+
+			}
+			else {
+				attr.value = `./images/icons8-menu.svg`
+				header.style.display = "block"
+				nav.style.position = 'sticky'
+			}
+
+			image.setAttributeNode(attr)
+		}
+
+		window.onscroll = function () {
+			myFunction()
+		};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		}
+	</script>
+
+	<!-- slideshow section  -->
+	<div class="main-carousel">
+		<div class="carousel">
+			<div class="items">
+				<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+					alt="" class="carousel-image current" />
+				<img src="https://store-images.s-microsoft.com/image/apps.32256.14224494707314076.8116b5ee-01ee-49e4-827c-bc6739343224.90a3690d-d956-4e1a-a673-1871117b442a?mode=scale&q=90&h=720&w=1280"
+					alt="" class="carousel-image" />
+				<img src="https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg"
+					alt="" class="carousel-image" />
+				<img src="https://www.wildcenter.org/wp-content/uploads/2016/04/ww-nest-with-a-view.jpg" alt=""
+					class="carousel-image" />
+				<img src="https://t-ec.bstatic.com/images/hotel/max1024x768/169/169160530.jpg" alt=""
+					class="carousel-image" />
+			</div>
+		</div>
+
+		<div class="buttons">
+			<i class="fas fa-chevron-left fa-3x" id="prevBtn"></i>
+			<i class="fas fa-chevron-right fa-3x" id="nextBtn"></i>
+		</div>
+		<div class="nav-dots">
+			<div class="dot active"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+	</div>
+
+	<script>
+		// ============================== Carousel slider =====================================
+
+		const images = document.querySelectorAll(".carousel-image");
+		const dots = document.querySelectorAll(".dot");
+		const prevBtn = document.querySelector("#prevBtn");
+		const nextBtn = document.querySelector("#nextBtn");
+
+		const nextSlide = () => {
+			const currentSlide = document.querySelector(".current");
+			currentSlide.classList.remove("current");
+			if (currentSlide.nextElementSibling) {
+				currentSlide.nextElementSibling.classList.add("current");
+			} else {
+				images[0].classList.add("current");
+			}
+
+			dotsNextSlide();
+		};
+
+		const prevSlide = () => {
+			const currentSlide = document.querySelector(".current");
+			currentSlide.classList.remove("current");
+			if (currentSlide.previousElementSibling) {
+				currentSlide.previousElementSibling.classList.add("current");
+			} else {
+				images[images.length - 1].classList.add("current");
+			}
+
+			dotsPrevSlide();
+		};
+
+		nextBtn.addEventListener("click", k => {
+			nextSlide();
+		});
+		prevBtn.addEventListener("click", k => {
+			prevSlide();
+		});
+
+		// =================== Dots ===========================
+		const dotsNextSlide = () => {
+			const dotActive = document.querySelector(".active");
+
+			dotActive.classList.remove("active");
+			if (dotActive.nextElementSibling) {
+				dotActive.nextElementSibling.classList.add("active");
+			} else {
+				dots[0].classList.add("active");
+			}
+			dotActive.classList.remove("active");
+		};
+
+		const dotsPrevSlide = () => {
+			const dotActive = document.querySelector(".active");
+
+			dotActive.classList.remove("active");
+			if (dotActive.previousElementSibling) {
+				dotActive.previousElementSibling.classList.add("active");
+			} else {
+				dots[dots.length - 1].classList.add("active");
+			}
+			dotActive.classList.remove("active");
+		};
+
+		const dotJump = () => {
+			dots.forEach((dot, index) => {
+				dot.addEventListener("click", () => {
+					const dotActive = document.querySelector(".active");
+					dotActive.classList.remove("active");
+					dot.classList.add("active");
+
+					const imageTarget = images[index];
+					const currentSlide = document.querySelector(".current");
+
+					currentSlide.classList.remove("current");
+					imageTarget.classList.add("current");
+				});
+			});
+		};
+		dotJump();
+	</script>
+
+	<!-- small about section  -->
+
+	<!-- small service section  -->
+
+	<!-- small experience section  -->
+
+	<!-- news & letter section  -->
+
+	<!-- customer section  -->
+
+	<!-- footer section  -->
+	<footer>
+		<div class="footer-wrapper">
+			<div class="footer1">
+				<div class="wide-box">
+
+					<div class="logo">
+						<a href="#">
+							CraneCare<span style="color: #ff3d00;">.</span>
+						</a>
+					</div>
+
+					<a href="#">
+						<p>© 2022 Care.</p>
+						<p>All Rights Reserved</p>
+					</a>
+
+				</div>
+				<div class="equal-box">
+					<h2>Company</h2>
+					<a href="#">About</a>
+					<a href="#">Contact</a>
+					<a href="#">help</a>
+				</div>
+				<div class="equal-box">
+					<h2>Contact</h2>
+					<a href="#">4967 Sardis Sta,</a>
+					<a href="#">Victoria 8007, Montreal.</a>
+					<a href="#">support@artstudio.com</a>
+				</div>
+				<div class="equal-box">
+
+					<h2>More</h2>
+					<a href="#">destination</a>
+					<a href="#">venue</a>
+					<a href="#">trip</a>
+
+				</div>
+				<div class="wide-box">
+
+					<div class="social-media-icon">
+
+						<a href="#">
+							<img src="./images/social_media/icons8-facebook.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="./images/social_media/icons8-twitter.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="./images/social_media/icons8-instagram.svg" alt="">
+						</a>
+
+
+						<a href="#">
+							<img src="./images/social_media/icons8-youtube.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="./images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+
+					</div>
+
+					<p>we are present on these platform.</p>
+
+				</div>
+			</div>
+			<div class="footer2">
+				Copyright © 2022 vishal kumar . All Right Reserved .
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- copyright section  -->
+
+
+</body>
+
+</html>

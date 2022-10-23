@@ -1,0 +1,303 @@
+/**  Socail Media Icon **/
+
+.social__media_icon {
+    width: 55px;
+    position: fixed;
+    top: 63%;
+    left: 1%;
+    height: 100vh;
+}
+
+.social__media_icon div {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    font-size: 20px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(149, 157, 165, 0.2);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    transition: 0.25s ease-in-out;
+}
+
+.social__media_icon div:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.social__media_icon div a {
+    text-decoration: none;
+}
+
+.social__media_icon div a img {
+    margin-top: 5px;
+    width: 30px;
+}
+
+/** Header **/
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.header__wrapper {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    padding: 10px 0;
+    margin-top: 3%;
+    grid-template-areas: "1fr 1fr";
+    border-bottom: 1px solid gainsboro
+}
+
+.header__wrapper .logo__container img {
+    width: 200px;
+    height: auto;
+}
+
+.header__wrapper .content__container {
+    display: grid;
+    grid-template-areas: "1fr 1fr 1fr";
+}
+
+.header__wrapper .content__container .location__container,
+.header__wrapper .content__container .mail__container {
+    display: flex;
+}
+
+.header__wrapper .content__container .location__container .location__logo,
+.header__wrapper .content__container .mail__container .mail__logo {
+    width: 50px;
+    height: 50px;
+}
+
+.header__wrapper .content__container .location__container .location__content {
+    margin-left: 1%;
+}
+
+.header__wrapper .content__container .location__container .location__content small,
+.header__wrapper .content__container .mail__container .mail__content small {
+    font-size: 13px;
+    color: #808080;
+}
+
+.header__wrapper .content__container .location__container .location__content p,
+.header__wrapper .content__container .mail__container .mail__content p {
+    font-size: 15px;
+    color: #262626;
+}
+
+.header__wrapper .content__container .social__container {
+    display: flex;
+}
+
+
+.header__wrapper .content__container .social__container div {
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 50%;
+
+
+    border: 1px solid rgba(149, 157, 165, 0.2);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.header__wrapper .content__container .social__container div:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+
+.header__wrapper .content__container .social__container a {
+    text-decoration: none;
+    display: inline;
+}
+
+.header__wrapper .content__container .social__container img {
+    width: 25px;
+}
+
+.header__wrapper .content__container .social__container div:hover {
+    animation: leaves 0.25s linear;
+}
+
+/** Slide show section **/
+.main-carousel {
+    position: relative;
+    height: 600px;
+}
+
+.main-carousel .carousel {
+    margin: 30px 0 30px 0;
+    width: 100%;
+}
+
+.main-carousel .carousel .items {
+    width: 100%;
+}
+
+.main-carousel .carousel .items .carousel-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s all;
+}
+
+.main-carousel .carousel .items .current {
+    opacity: 1;
+}
+
+.main-carousel .buttons #prevBtn,
+.main-carousel .buttons #nextBtn {
+    height: 35px;
+    width: 35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.main-carousel .buttons #prevBtn:hover,
+.main-carousel .buttons #nextBtn:hover {
+    opacity: 1;
+}
+
+.main-carousel .buttons #prevBtn {
+    top: 50%;
+    left: 3%;
+}
+
+.main-carousel .buttons #nextBtn {
+    top: 50%;
+    right: 3%;
+}
+
+.main-carousel .nav-dots {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 99;
+}
+
+.main-carousel .nav-dots .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.main-carousel .nav-dots .active {
+    opacity: 1;
+}
+
+
+@keyframes leaves {
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+
+@media (max-width: 1140px) {
+    header {
+        height: auto;
+    }
+
+    .header__wrapper {
+        grid-template-areas: "1fr";
+    }
+
+    .header__wrapper .logo__container {
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgb(203, 203, 203);
+    }
+
+    .header__wrapper .content__container {
+        padding-top: 10px;
+    }
+
+    .nav .logo {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 880px) {
+    .header__wrapper .content__container {
+        grid-template-areas: "1fr 1fr";
+    }
+
+    .social__container {
+        width: 160%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 0;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .header__wrapper .content__container {
+        grid-template-areas: "1fr";
+    }
+
+    .social__container,
+    .mail__container,
+    .location__container {
+        text-align: center;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 5px;
+    }
+
+    .location__logo,
+    .mail__logo {
+        margin-right: 5px;
+        padding: 7px;
+    }
+
+}
